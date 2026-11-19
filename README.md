@@ -94,6 +94,9 @@ Route calls to it with a LiveKit SIP dispatch rule that names the agent (`N8N_AG
 - `scripts/contract_check.py`: scripted start, turn and end against n8n, no call.
 - `scripts/script_check.py`: runs a script's tools against n8n and prints each line, no call.
 - `scripts/voice_check.py --script`: renders the script's fixed lines into the voice cache.
+- `scripts/route.py <rule> [agent name]`: points a SIP dispatch rule at an agent name and reads it back. Run several
+  workers on one machine, each with its own `N8N_AGENT_NAME` and `WORKER_HTTP_PORT=0` (any free port), and switch
+  which one a phone number reaches.
 
 ## Things learned on real calls
 

@@ -35,7 +35,8 @@ class ScriptedAgent(Agent):
 
 logger = logging.getLogger("n8n-worker")
 config: Config = load()
-server = AgentServer()
+# WORKER_HTTP_PORT=0 takes any free port, so several workers can run on one machine.
+server = AgentServer(port=int(os.environ.get("WORKER_HTTP_PORT", "8081")))
 
 UUI_ATTRIBUTES = ("sip.h.user-to-user", "sip.h.User-to-User", "sip.h.x-user-to-user")
 
