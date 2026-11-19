@@ -1,0 +1,2 @@
+livekit-agents[openai,silero,mcp]>=1.8,<2
+aiohttp>=3.9
